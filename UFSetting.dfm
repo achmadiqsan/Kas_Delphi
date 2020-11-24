@@ -1,0 +1,144 @@
+object FSetting: TFSetting
+  Left = 0
+  Top = 0
+  Caption = 'SETTING'
+  ClientHeight = 441
+  ClientWidth = 566
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 566
+    Height = 441
+    Align = alClient
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitLeft = 192
+    ExplicitTop = 176
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Label1: TLabel
+      Left = 22
+      Top = 24
+      Width = 120
+      Height = 33
+      Caption = 'Username'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 22
+      Top = 90
+      Width = 113
+      Height = 33
+      Caption = 'Password'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Edit1: TEdit
+      Left = 147
+      Top = 24
+      Width = 394
+      Height = 37
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -24
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Edit2: TEdit
+      Left = 147
+      Top = 90
+      Width = 394
+      Height = 37
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -24
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 1
+    end
+    object Button1: TButton
+      Left = 22
+      Top = 142
+      Width = 99
+      Height = 51
+      Caption = 'Bersih'
+      TabOrder = 2
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 127
+      Top = 142
+      Width = 99
+      Height = 51
+      Caption = 'Simpan'
+      TabOrder = 3
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 232
+      Top = 142
+      Width = 99
+      Height = 51
+      Caption = 'Update'
+      TabOrder = 4
+      OnClick = Button3Click
+    end
+    object Button4: TButton
+      Left = 337
+      Top = 142
+      Width = 99
+      Height = 51
+      Caption = 'Delete'
+      TabOrder = 5
+      OnClick = Button4Click
+    end
+    object Button5: TButton
+      Left = 442
+      Top = 142
+      Width = 99
+      Height = 51
+      Caption = 'Close'
+      TabOrder = 6
+      OnClick = Button5Click
+    end
+    object DBGrid1: TDBGrid
+      Left = 22
+      Top = 208
+      Width = 519
+      Height = 217
+      DataSource = DM.dssetting
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 7
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      OnCellClick = DBGrid1CellClick
+    end
+  end
+end

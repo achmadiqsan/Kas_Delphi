@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/06/29 20.00.00.000.428,=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/07/28 10.00.00.000.608,=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/07/28 11.00.00.000.260,=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/08/15 18.00.00.000.181,=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/08/16 09.00.00.000.906,=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/08/19 19.00.00.000.191,=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.937,D:\KAS DELPHI\DataModule.pas=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.132,D:\KAS DELPHI\UKasMasuk.dfm=D:\KAS DELPHI\Unit1.dfm</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.132,D:\KAS DELPHI\UKasMasuk.pas=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.060,D:\KAS DELPHI\Umenu.dfm=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.863,=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.657,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.937,D:\KAS DELPHI\DataModule.dfm=D:\KAS DELPHI\Unit1.dfm</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.234,D:\KAS DELPHI\PKasDelphi.dproj=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.099,D:\KAS DELPHI\UTabmahDataKasMasuk.pas=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.099,D:\KAS DELPHI\UTabmahDataKasMasuk.dfm=D:\KAS DELPHI\Unit1.dfm</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.285,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.555,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 08.00.00.000.060,D:\KAS DELPHI\Umenu.pas=C:\Users\Near\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 12.00.00.000.115,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 13.00.00.000.467,D:\KAS DELPHI\UUbahDataKasMasuk.dfm=D:\KAS DELPHI\Unit1.dfm</Transaction>
+    <Transaction>2020/11/04 13.00.00.000.467,D:\KAS DELPHI\UUbahDataKasMasuk.pas=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 18.00.00.000.980,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 19.00.00.000.929,D:\KAS DELPHI\Unit1.dfm=D:\KAS DELPHI\UKasKeluar.dfm</Transaction>
+    <Transaction>2020/11/04 19.00.00.000.929,D:\KAS DELPHI\Unit1.pas=D:\KAS DELPHI\UKasKeluar.pas</Transaction>
+    <Transaction>2020/11/04 20.00.00.000.820,=D:\KAS DELPHI\Unit2.pas</Transaction>
+    <Transaction>2020/11/04 20.00.00.000.413,D:\KAS DELPHI\UTabmahDataKasKeluar.dfm=D:\KAS DELPHI\Unit2.dfm</Transaction>
+    <Transaction>2020/11/04 20.00.00.000.413,D:\KAS DELPHI\UTabmahDataKasKeluar.pas=D:\KAS DELPHI\Unit2.pas</Transaction>
+    <Transaction>2020/11/04 21.00.00.000.648,D:\KAS DELPHI\UUbahHapusDataKasKeluar.pas=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 21.00.00.000.796,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 21.00.00.000.648,D:\KAS DELPHI\UUbahHapusDataKasKeluar.dfm=D:\KAS DELPHI\Unit1.dfm</Transaction>
+    <Transaction>2020/11/05 20.00.00.000.178,D:\KAS DELPHI\Unit1.dfm=D:\KAS DELPHI\ULap.dfm</Transaction>
+    <Transaction>2020/11/05 20.00.00.000.587,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/05 20.00.00.000.178,D:\KAS DELPHI\Unit1.pas=D:\KAS DELPHI\ULap.pas</Transaction>
+    <Transaction>2020/11/05 20.00.00.000.923,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/05 20.00.00.000.425,D:\KAS DELPHI\Unit1.pas=D:\KAS DELPHI\UCetakLapKasMasuk.pas</Transaction>
+    <Transaction>2020/11/05 20.00.00.000.425,D:\KAS DELPHI\Unit1.dfm=D:\KAS DELPHI\UCetakLapKasMasuk.dfm</Transaction>
+    <Transaction>2020/11/21 05.00.00.000.033,D:\KAS DELPHI\ULogin.dfm=D:\KAS DELPHI\Unit1.dfm</Transaction>
+    <Transaction>2020/11/21 05.00.00.000.052,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/21 05.00.00.000.033,D:\KAS DELPHI\ULogin.pas=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/21 06.00.00.000.703,D:\KAS DELPHI\UCetakLapKasRekap.pas=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/21 06.00.00.000.150,D:\KAS DELPHI\UCetakLapKasKeluar.dfm=D:\KAS DELPHI\Unit1.dfm</Transaction>
+    <Transaction>2020/11/21 06.00.00.000.150,D:\KAS DELPHI\UCetakLapKasKeluar.pas=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/21 06.00.00.000.226,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/21 06.00.00.000.281,=D:\KAS DELPHI\Unit1.pas</Transaction>
+    <Transaction>2020/11/21 06.00.00.000.703,D:\KAS DELPHI\UCetakLapKasRekap.dfm=D:\KAS DELPHI\Unit1.dfm</Transaction>
+    <Transaction>2020/11/24 16.00.00.000.984,D:\KAS DELPHI\Unit1.dfm=D:\KAS DELPHI\UFSetting.dfm</Transaction>
+    <Transaction>2020/11/24 16.00.00.000.984,D:\KAS DELPHI\Unit1.pas=D:\KAS DELPHI\UFSetting.pas</Transaction>
+    <Transaction>2020/11/24 16.00.00.000.432,=D:\KAS DELPHI\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,50 @@
+unit UKasKeluar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+
+type
+  TFKasKeluar = class(TForm)
+    Panel1: TPanel;
+    Simpan: TImage;
+    CloseBtn: TImage;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Label3: TLabel;
+    DBGrid1: TDBGrid;
+    procedure CloseBtnClick(Sender: TObject);
+    procedure SimpanClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FKasKeluar: TFKasKeluar;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule, UTabmahDataKasKeluar;
+
+procedure TFKasKeluar.CloseBtnClick(Sender: TObject);
+begin
+  DM.FDQuery2.Close;
+  DM.FDQuery2.Active := True;
+  DM.FDQuery3.Close;
+  DM.FDQuery3.Active := True;
+  Close;
+end;
+
+procedure TFKasKeluar.SimpanClick(Sender: TObject);
+begin
+  FTabmahDataKasKeluar.Show;
+end;
+
+end.

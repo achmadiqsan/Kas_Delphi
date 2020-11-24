@@ -1,0 +1,151 @@
+unit UTabmahDataKasMasuk;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.ComCtrls;
+
+type
+  TFTabmahDataKasMasuk = class(TForm)
+    Panel1: TPanel;
+    Closebtn: TImage;
+    Simpan: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    Memo1: TMemo;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    procedure ClosebtnClick(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
+    procedure SimpanClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FTabmahDataKasMasuk: TFTabmahDataKasMasuk;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+// code function convert int to currency :
+function Ribuan(Edit:TEdit):string;
+var
+  NilaiRupiah : string;
+  AngkaRupiah : Currency;
+begin
+  if Edit.Text='' then Exit;
+  NilaiRupiah := Edit.Text;
+  NilaiRupiah := StringReplace(NilaiRupiah,',','',[rfReplaceAll,rfIgnoreCase]);
+  NilaiRupiah := StringReplace(NilaiRupiah,'.','',[rfReplaceAll,rfIgnoreCase]);
+  AngkaRupiah := StrToCurrDef(NilaiRupiah,0);
+  Edit.Text := FormatCurr('#,###',AngkaRupiah);
+  Edit.SelStart := Length(Edit.Text);
+end;
+
+// code function convert currency to int:
+function HapusFormat(Nilai:TEdit):Integer;
+var
+  hasil : String;
+begin
+  hasil := Nilai.text;
+  hasil := StringReplace(hasil,',','',[rfReplaceAll,rfIgnoreCase]);
+  hasil := StringReplace(hasil,'.','',[rfReplaceAll,rfIgnoreCase]);
+  Result := StrToInt(hasil);
+end;
+
+procedure TFTabmahDataKasMasuk.ClosebtnClick(Sender: TObject);
+begin
+  DateTimePicker1.Date := Now;
+  Memo1.Clear;
+  Edit1.Clear;
+  Edit2.Clear;
+  Close;
+end;
+
+procedure TFTabmahDataKasMasuk.Edit1Change(Sender: TObject);
+begin
+  if (Edit1.Text <> '0') then
+    begin
+      Ribuan(Edit1);
+    end;
+end;
+
+procedure TFTabmahDataKasMasuk.FormActivate(Sender: TObject);
+var
+  A : string;
+begin
+  A := IntToStr(DM.FDTable1.RecordCount + 1);
+  Edit2.Text := 'Kas'+'-'+ A;
+end;
+
+procedure TFTabmahDataKasMasuk.SimpanClick(Sender: TObject);
+var
+  id,A : string;
+  id1,simp,saldo1,saldo2 : Integer;
+begin
+  if Memo1.Text = '' then ShowMessage('Uraian Tidak Boleh Kosong') else
+  if Edit1.Text = '' then ShowMessage('Jumlah Tidak Boleh Kosong') else
+    begin
+      // corvent currency ke int :
+      simp := HapusFormat(Edit1);
+      // coding untuk memilih kode dengan nomor yg paling terbesar :
+      DM.FDQuery1.Close;
+      DM.FDQuery1.SQL.Clear;
+      DM.FDQuery1.SQL.Add('SELECT saldo_kas FROM saldo');
+      DM.FDQuery1.SQL.Add('ORDER By id DESC LIMIT 1');
+      DM.FDQuery1.Open;
+
+      // coding untuk mengcopy nilai yang di seleksi :
+      id := Copy(DM.FDQuery1.Fields[0].AsString, 0, 11);
+      //
+      begin
+        DM.FDTable1.Append;
+        DM.FDTable1['id'] := Edit2.Text;
+        DM.FDTable1['tanggal'] := DateTimePicker1.Date;
+        DM.FDTable1['uraian'] := Memo1.Text;
+        DM.FDTable1['debit'] := simp;
+        DM.FDTable1['kredit'] := 0;
+        DM.FDTable1.Post;
+        //
+        if id = '' then
+          begin
+            DM.FDTable2.Append;
+            DM.FDTable2['id'] := Edit2.Text;
+            DM.FDTable2['saldo_kas'] := 0 + simp;
+            DM.FDTable2.Post;
+          end
+        else
+        if id <> '' then
+          begin
+            DM.FDTable2.Append;
+            DM.FDTable2['id'] := Edit2.Text;
+            DM.FDTable2['saldo_kas'] := StrToInt(id) + simp;
+            DM.FDTable2.Post;
+          end;
+      end ;
+      DateTimePicker1.Date := Now;
+      Memo1.Clear;
+      Edit1.Clear;
+      //
+      A := IntToStr(DM.FDTable1.RecordCount + 1);
+      Edit2.Text := 'Kas'+'-'+ A;
+      //
+      DM.FDQuery1.Close;
+      DM.FDQuery1.SQL.Clear;
+      DM.FDQuery1.SQL.Add('SELECT * FROM saldo');
+      DM.FDQuery1.Open;
+    end;
+end;
+
+end.

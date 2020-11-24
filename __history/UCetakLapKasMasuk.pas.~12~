@@ -1,0 +1,62 @@
+unit UCetakLapKasMasuk;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TFCetakLapKasMasuk = class(TForm)
+    Panel1: TPanel;
+    Label1: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    Label2: TLabel;
+    DateTimePicker2: TDateTimePicker;
+    Label3: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Label4: TLabel;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FCetakLapKasMasuk: TFCetakLapKasMasuk;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule, ULap;
+
+procedure TFCetakLapKasMasuk.Button1Click(Sender: TObject);
+begin
+  // code filter sesuai tanggal :
+  {DM.FDTable1.Filtered := False;
+  DM.FDTable1.Filter :='tanggal>= '+Quotedstr(DateToStr(DateTimePicker1.Date))+'And tanggal<= '+Quotedstr(DateToStr(DateTimePicker2.Date)) + 'And jenis= IN'+Label4.Caption;
+  Dm.FDTable1.Filtered := True;}
+  DM.filterIN.Close;
+  DM.filterIN.SQL.Clear;
+  DM.filterIN.SQL.Add('select * from kas where jenis = '+QuotedStr(Label4.Caption)+' and (((tanggal) between "'+FormatDateTime('yyyy-mm-dd',DateTimePicker1.Date)+'" AND "'+FormatDateTime('yyyy-mm-dd',DateTimePicker2.Date)+'"))');
+  DM.filterIN.Open;
+  FLap.QuickRep1.Preview;
+end;
+
+procedure TFCetakLapKasMasuk.Button2Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFCetakLapKasMasuk.FormActivate(Sender: TObject);
+begin
+  DateTimePicker1.Date := Now;
+  DateTimePicker2.Date := Now;
+end;
+
+end.

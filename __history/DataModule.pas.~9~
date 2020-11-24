@@ -1,0 +1,44 @@
+unit DataModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
+  FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.Client, Data.DB,
+  FireDAC.Comp.DataSet, DBAccess, MyAccess, MemDS;
+
+type
+  TDM = class(TDataModule)
+    FDConnection1: TFDConnection;
+    FDTable1: TFDTable;
+    DataSource1: TDataSource;
+    FDQuery1: TFDQuery;
+    FDTable2: TFDTable;
+    DataSource2: TDataSource;
+    FDTable1id: TStringField;
+    FDTable1tanggal: TDateField;
+    FDTable1uraian: TStringField;
+    FDTable1debit: TIntegerField;
+    FDTable1kredit: TIntegerField;
+    FDTable2id: TStringField;
+    FDTable2saldo_kas: TIntegerField;
+    FDTable1jenis: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

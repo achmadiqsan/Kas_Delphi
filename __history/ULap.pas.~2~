@@ -1,0 +1,33 @@
+unit ULap;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, QuickRpt, Vcl.ExtCtrls, Vcl.ComCtrls;
+
+type
+  TFLap = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
+    QuickRep1: TQuickRep;
+    ColumnHeaderBand1: TQRBand;
+    PageHeaderBand1: TQRBand;
+    DetailBand1: TQRBand;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FLap: TFLap;
+
+implementation
+
+{$R *.dfm}
+
+end.

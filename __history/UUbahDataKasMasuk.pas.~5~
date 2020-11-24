@@ -1,0 +1,94 @@
+unit UUbahDataKasMasuk;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+
+type
+  TFUbahDataKasMasuk = class(TForm)
+    Panel1: TPanel;
+    Closebtn: TImage;
+    Simpan: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    Memo1: TMemo;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    ubah: TImage;
+    Image1: TImage;
+    Edit3: TEdit;
+    procedure ClosebtnClick(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
+    procedure ubahClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FUbahDataKasMasuk: TFUbahDataKasMasuk;
+
+implementation
+
+{$R *.dfm}
+
+// code function convert int to currency :
+function Ribuan(Edit:TEdit):string;
+var
+  NilaiRupiah : string;
+  AngkaRupiah : Currency;
+begin
+  if Edit.Text='' then Exit;
+  NilaiRupiah := Edit.Text;
+  NilaiRupiah := StringReplace(NilaiRupiah,',','',[rfReplaceAll,rfIgnoreCase]);
+  NilaiRupiah := StringReplace(NilaiRupiah,'.','',[rfReplaceAll,rfIgnoreCase]);
+  AngkaRupiah := StrToCurrDef(NilaiRupiah,0);
+  Edit.Text := FormatCurr('#,###',AngkaRupiah);
+  Edit.SelStart := Length(Edit.Text);
+end;
+
+// code function convert currency to int:
+function HapusFormat(Nilai:TEdit):Integer;
+var
+  hasil : String;
+begin
+  hasil := Nilai.text;
+  hasil := StringReplace(hasil,',','',[rfReplaceAll,rfIgnoreCase]);
+  hasil := StringReplace(hasil,'.','',[rfReplaceAll,rfIgnoreCase]);
+  Result := StrToInt(hasil);
+end;
+
+procedure TFUbahDataKasMasuk.ClosebtnClick(Sender: TObject);
+begin
+  DateTimePicker1.Enabled := False;
+  Memo1.Enabled := False;
+  Edit1.Text := False;
+  ubah.Visible := True;
+  Simpan.Visible := False;
+  close;
+end;
+
+procedure TFUbahDataKasMasuk.Edit1Change(Sender: TObject);
+begin
+  if (Edit1.Text <> '0') then
+    begin
+      Ribuan(Edit1);
+    end;
+end;
+
+procedure TFUbahDataKasMasuk.ubahClick(Sender: TObject);
+begin
+  DateTimePicker1.Enabled := True;
+  Memo1.Enabled := True;
+  Edit1.Text := True;
+  ubah.Visible := False;
+  Simpan.Visible := true;
+end;
+
+end.

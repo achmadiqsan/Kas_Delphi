@@ -1,0 +1,26 @@
+program PKasDelphi;
+
+uses
+  Vcl.Forms,
+  Umenu in 'Umenu.pas' {FMenu},
+  DataModule in 'DataModule.pas' {DM: TDataModule},
+  UKasMasuk in 'UKasMasuk.pas' {FKasMasuk},
+  UTabmahDataKasMasuk in 'UTabmahDataKasMasuk.pas' {FTabmahDataKasMasuk},
+  UUbahDataKasMasuk in 'UUbahDataKasMasuk.pas' {FUbahDataKasMasuk},
+  UKasKeluar in 'UKasKeluar.pas' {Form1},
+  UTabmahDataKasKeluar in 'UTabmahDataKasKeluar.pas' {FTabmahDataKasKeluar};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFMenu, FMenu);
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TFKasMasuk, FKasMasuk);
+  Application.CreateForm(TFTabmahDataKasMasuk, FTabmahDataKasMasuk);
+  Application.CreateForm(TFUbahDataKasMasuk, FUbahDataKasMasuk);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFTabmahDataKasKeluar, FTabmahDataKasKeluar);
+  Application.Run;
+end.
