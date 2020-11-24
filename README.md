@@ -1,6 +1,8 @@
 # Kas_Delphi
 Aplikasi Kas Dengan Delphi
 
+Aplikasi ini Merupakan Aplikasi Kas Keuangan Sederhana dan Masih Perlu Untuk Di Kembangkan Lagi
+
 ![Screenshot (134)](https://user-images.githubusercontent.com/57186921/100101628-77d31f00-2e9d-11eb-9d7f-9cb2d3236956.png)
 ![Screenshot (135)](https://user-images.githubusercontent.com/57186921/100101633-7a357900-2e9d-11eb-8846-1ef2995e7aba.png)
 ![Screenshot (136)](https://user-images.githubusercontent.com/57186921/100101642-7b66a600-2e9d-11eb-84d8-97efe380e8ce.png)
